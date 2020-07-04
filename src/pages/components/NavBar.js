@@ -1,11 +1,12 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 class NavBar extends React.Component{
 
     constructor(){
         super()
         this.state = {
-            isLoggedIn: false
+            isLoggedIn: true
         }
     }
 
@@ -30,7 +31,7 @@ class NavBar extends React.Component{
 
         return(
             <div style={divStyles}>
-                <button onClick={this.clickHandler} style={buttonStyles}>{buttonText}</button>
+               <Link to="/"><button style={buttonStyles}>{buttonText}</button></Link> 
             </div>
         )
     }

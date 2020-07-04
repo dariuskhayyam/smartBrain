@@ -1,0 +1,35 @@
+.containDiv{
+    background-color:  rgba(105, 103, 103, 0.4);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+}
+
+.containDiv input{
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: black;
+    font-size: large;
+    padding: 0.2em;
+}
+
+.containDiv h3{
+    padding: 0;
+    margin: 0;
+}
+
+.containDiv button{
+    padding: 0.4em;
+    border-radius: 30px;
+    background-color: transparent;
+}
+
+.containDiv button:hover{
+    background-color: rgb(255,0,0,0.6);
+    color: white; 
+    cursor: pointer;
+    transform: scale(1.2, 1.2);
+    transition-duration: 1s;
+
+}

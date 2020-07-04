@@ -51,7 +51,7 @@ class ImgForm extends React.Component{
             <div style={divStyles}>
                 <form onSubmit={this.submitHandler}>
                     <par>
-                    <h1 style={{marginTop:"4em"}}>Give us an image and we'll find a face!</h1>
+                    <h1>Give us an image and we'll find a face!</h1>
                     <input 
                         type="text" 
                         name="text" 

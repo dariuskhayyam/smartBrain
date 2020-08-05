@@ -4,6 +4,7 @@ import ImgForm from "./components/ImgForm.js"
 import Image from "./components/detection/IMG.js"
 import Logo from "./components/Logo.js"
 import Rank from "./components/Rank"
+import NavBar from "./components/Rank.js"
 
 const app = new Clarifai.App({
     apiKey: '5be6015745dc4b36ac810d7e2a826da0'
@@ -58,8 +59,8 @@ class Home extends React.Component{
         return(
             <div>
                <Logo />
-               <Rank />
-               <ImgForm urlPush={this.urlPush} inputUpdater={this.inputUpdater}/>
+               <Rank user={this.props.user}/>
+               <ImgForm urlPush={this.urlPush} inputUpdater={this.inputUpdater} loadUser={this.props.loadUser} incrementEntries={this.props.incrementEntries} name={this.props.user.name}/>
                <Image url={this.state.url} box={this.state.box}/>
             </div>
         )

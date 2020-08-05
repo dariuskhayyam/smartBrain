@@ -2,6 +2,8 @@ import React from "react"
 
 class ImgForm extends React.Component{
 
+    
+
     constructor(){
         super()
         this.state = {
@@ -23,6 +25,23 @@ class ImgForm extends React.Component{
         let link = this.state.text
         this.setState({url: link});
         this.props.urlPush(link)
+    }
+
+    clickHandler = () => {
+
+        let {name, incrementEntries} = this.props
+
+        console.log(name)
+
+        fetch("https://lit-atoll-44265.herokuapp.com/image",{
+            method: "put",
+            headers: {"content-type":"application/json"},
+            body: JSON.stringify({
+                name: name
+            })
+        })
+
+        incrementEntries()
     }
 
     render(){
@@ -50,7 +69,7 @@ class ImgForm extends React.Component{
         return(
             <div style={divStyles}>
                 <form onSubmit={this.submitHandler}>
-                    <par>
+                    
                     <h1>Give us an image and we'll find a face!</h1>
                     <input 
                         type="text" 
@@ -61,8 +80,8 @@ class ImgForm extends React.Component{
                         style={inputStyles}
                     />
 
-                    <button style={buttonStyles}>Find!</button>
-                    </par>
+                <button style={buttonStyles} onClick={this.clickHandler}>Find!</button>
+                    
                 </form>
                 
             </div>

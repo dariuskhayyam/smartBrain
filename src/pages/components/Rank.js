@@ -8,11 +8,16 @@ const style = {
     marginTop: "3em"
 }
 
-function Rank(){
+function Rank(props){
+
+    console.log(props)
+
+    let {entries, name} = props.user
+
     return(
         <div style={style}>
-            <h1>Hi Darius! You Are Rank number...</h1>
-            <h1> 5 </h1>
+            <h1>{`Hi ${name} You Are Rank number...`}</h1>
+            <h1>{` ${entries} `}</h1>
         </div>
     )
 }

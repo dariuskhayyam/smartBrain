@@ -1,24 +1,9 @@
 import React from "react"
 import {Link} from "react-router-dom"
 
-class NavBar extends React.Component{
+function NavBar({isLoggedIn, clickHandler}){
 
-    constructor(){
-        super()
-        this.state = {
-            isLoggedIn: true
-        }
-    }
-
-    clickHandler = () => {
-        this.setState((prevState) => ({
-            isLoggedIn: !prevState.isLoggedIn,
-          }));
-    }
-
-    render(){
-
-        let buttonText  = this.state.isLoggedIn ? "Log Out" : "Log In" 
+        let buttonText  = "log out"
         
         const divStyles = {
             textAlign:"right",
@@ -31,10 +16,9 @@ class NavBar extends React.Component{
 
         return(
             <div style={divStyles}>
-               <Link to="/"><button style={buttonStyles}>{buttonText}</button></Link> 
+               <Link to="/"><button style={buttonStyles}> {buttonText}</button></Link> 
             </div>
         )
     }
-}
 
 export default NavBar
